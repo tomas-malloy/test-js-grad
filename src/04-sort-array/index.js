@@ -11,5 +11,19 @@
 // Explain:
 
 module.exports = function sortArray(arr) {
-  // TODO
+  if (arr instanceof Array !== true) {
+    throw new TypeError('ERROR: Not an array!');
+  } else if (arr instanceof Array) {
+    if (arr.length == 0) {
+      return [];
+    }
+    arr.forEach(element => {
+      if (Number.isInteger(element) !== true) {
+        throw new TypeError(
+          'ERROR: One or more elements in the array are not integers!',
+        );
+      }
+    });
+    return arr.sort((a, b) => a - b);
+  }
 };

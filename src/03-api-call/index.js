@@ -35,5 +35,9 @@ The expected output is:
  */
 
 module.exports = async function fetchLukeSkywalker() {
-  // TODO
+  fetch('https://swapi.dev/api/people/1/')
+    .then(response => response.json())
+    .then(data => {
+      return data;
+    });
 };
